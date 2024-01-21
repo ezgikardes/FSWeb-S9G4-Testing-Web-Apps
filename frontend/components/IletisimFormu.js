@@ -80,8 +80,10 @@ const IletisimFormu = () => {
             value={form.ad}
             id="ad"
             placeholder="İlhan"
+            data-testid="ad-input" //test yapacaksak test-id daha mantıklı
           />
-          {(errors.ad) && <p data-testid="error">Hata: {errors.ad}</p>}
+          {(errors.ad) && <p data-testid="ad-error">Hata: {errors.ad}</p>}
+          {/* data test id'leri uniq olmalı. o yüzden bunun ismini ad-error diye değiştirdik.  */}
         </div>
 
         <div>
@@ -92,8 +94,9 @@ const IletisimFormu = () => {
             name="soyad"
             value={form.soyad}
             placeholder="Mansız"
+            data-testid="soyad-input"
           />
-          {(errors.soyad) && <p data-testid="error">Hata: {errors.soyad}</p>}
+          {(errors.soyad) && <p data-testid="soyad-error">Hata: {errors.soyad}</p>}
         </div>
 
         <div>
@@ -104,8 +107,9 @@ const IletisimFormu = () => {
             name="email"
             value={form.email}
             placeholder="yüzyılıngolcüsü@hotmail.com"
+            data-testid="email-input"
           />
-          {(errors.email) && <p data-testid="error">Hata: {errors.email}</p>}
+          {(errors.email) && <p data-testid="email-error">Hata: {errors.email}</p>}
         </div>
 
         <div>
@@ -115,13 +119,14 @@ const IletisimFormu = () => {
             name="mesaj"
             id="mesaj"
             value={form.mesaj}
+            data-testid="mesaj-input"
           />
-          {(errors.mesaj) && <p data-testid="error">Error: {errors.mesaj}</p>}
+          {(errors.mesaj) && <p data-testid="mesaj-error">Error: {errors.mesaj}</p>}
         </div>
 
         {displayData && <Goruntule form={form}/>}
 
-        <button>Gönder</button>
+        <button data-testid="submit-btn">Gönder</button>
       </form>
     </div>
   );

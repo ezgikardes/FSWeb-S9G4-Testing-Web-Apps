@@ -3,7 +3,7 @@ import React from 'react';
 const Goruntule = (props) => {
     const { ad, soyad, email, mesaj } = props.form;
 
-    return(<div id="displayContainer">
+    return(<div id="displayContainer" data-testid="goruntule-div">
         <h1>Gönderilen:</h1>
 
         { ad && <p data-testid="firstnameDisplay"><strong>Ad: </strong>{ad}</p> }
